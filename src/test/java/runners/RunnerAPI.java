@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "src/test/resources/features/api",
-        glue = {"stepdefinitions/api", "hooks/api"},
+        glue = {"stepdefinitions/api"},
         tags = "@API",
         dryRun = false
 )

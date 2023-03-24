@@ -1,3 +1,4 @@
+/*
 package hooks.api;
 
 import io.cucumber.java.Before;
@@ -22,3 +23,4 @@ public class HooksAPI {
 
     }
 }
+*/

@@ -1,6 +1,7 @@
+/*
 package stepdefinitions.api;
 
-import hooks.api.HooksAPI;
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import io.restassured.builder.RequestSpecBuilder;
@@ -51,12 +52,14 @@ public class CommonAPI {
         String email = ConfigReader.getProperty("email");
         String password = ConfigReader.getProperty("password");
 
-        /*
+        */
+/*
         {
              "email": "admin@gmail.com",
               "password": "123123123"
         }
-         */
+         *//*
+
 
         JSONObject reqBody = new JSONObject();
 
@@ -88,6 +91,7 @@ public class CommonAPI {
 
 
 
+*/
 /*package stepdefinitions.api;
 
 import hooks.api.HooksAPI;
@@ -154,4 +158,5 @@ public class CommonAPI {
                 spec(spec).when().get(fullPath);
         response.prettyPrint();
     }
-}*/
+}*//*
+*/

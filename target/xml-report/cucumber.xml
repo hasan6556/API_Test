@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="9.938">
-<testcase classname="Unknown" name="_2" time="9.451">
-<system-out><![CDATA[* Api user can set "api,profile,allCountries" thepath parameters............passed
-* Api user save response....................................................passed
-]]></system-out>
-</testcase>
-</testsuite>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.144"/>

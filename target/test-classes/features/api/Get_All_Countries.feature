@@ -1,5 +1,5 @@
 Feature:
-@API
+
   Scenario:
 
     * Api user can set "api,profile,allCountries" thepath parameters
