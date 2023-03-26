@@ -6,6 +6,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
+import org.junit.Assert;
+import pojos.RegisterPojos;
 
 import static io.restassured.RestAssured.given;
 
@@ -45,39 +47,28 @@ public class MyStepdefs  {
     @Given("User sets the post request body")
     public void user_sets_the_post_request_body() {
         //1 url hazirla
-        String url="https://trendlifebuy.com/api/register";
+        String url="https://trendlifebuy.com/api/get-user";
         //2 requestBody yi hazirla
-        /*
-        curl --location 'https://trendlifebuy.com/api/register' \
---header 'Accept: application/json' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "first_name": "registerApi",
-  "last_name": "TestApi",
-  "email": "api@api.com",
-  "password": "123123123",
-  "password_confirmation": "123123123",
-  "user_type": "customer",
-  "referral_code": "0101010101"
-}'
-         */
+        JSONObject req = new JSONObject();
+        req.put("id",1062);
 
-        JSONObject reqBody= new JSONObject();
-        reqBody.put("first_name", "registerApi");
-        reqBody.put("last_name", "TestApi");
-        reqBody.put("email", "admin039@trendlifebuy.com");
-        reqBody.put("password", "Trendlife123");
-        reqBody.put("password_confirmation", "Trendlife123");
-        reqBody.put("user_type", "customer");
-        reqBody.put("referral_code", "0101010101");
+        RegisterPojos registerPojos= new RegisterPojos("AKO","YOR","AKYOR",
+                "bdmin039@trendlifebuy.com","787645Au76","787645Au76","customer",
+                921123123,56793472);
 
         response=given().
-              headers("Authorization", "Bearer " + "858|olfPgnQrjyTcfvFaUlo8sZEA3rlyv7eoIMsyFril").
-              contentType(ContentType.JSON).
-              when().
-              body(reqBody.toString()).
-              post(url);
-      response.prettyPrint();
+                headers("Authorization", "Bearer " + "858|olfPgnQrjyTcfvFaUlo8sZEA3rlyv7eoIMsyFril").
+                contentType(ContentType.JSON).
+                when().
+                body(req.toString()).
+                get(url);
+        response.prettyPrint();
+
+        JsonPath res= response.jsonPath();
+
+        Assert.assertEquals(registerPojos.getFirst_name(),res.getString("user.first_name"));
+        Assert.assertEquals(registerPojos.getLast_name(),res.getString("user.last_name"));
+        System.out.println(res.getString("user.first_name"));
 
     }
     @Given("User can see the status code {int} and response message information")
