@@ -9,9 +9,15 @@ Feature: APIUS_001
     * User sets the post request body
     * User can see the status code 201 and response message information
 
-  @API
+
   Scenario: TC_02
     # It should be verified by using the API connection,
     # whether the client created via the API by sending a post request is in the customer lists or not.
-  * User sends the post request
+  #* User sends the post request
   * User can see what he added
+  @API
+    Scenario: TC_03
+      #When a POST body consisting of valid data is sent to the api/register endpoint,
+          # it should be verified that the data in the response body
+          # (first_name, last_name, username, email, phone) is the same as the data sent in the request body.
+      * User can see related data what he added

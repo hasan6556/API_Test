@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class RegisterPojos {
+public class RegisterPojo {
     /*
 {
   "first_name": "sdad",
@@ -29,7 +29,7 @@ public class RegisterPojos {
    private String password;
    private String password_confirmation;
    private String user_type;
-   private int phone;
+   private String phone;
    private int referral_code;
 
 

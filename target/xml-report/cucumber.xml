@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.144"/>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.545">
+    <testcase classname="APIUS_001" name="TC_03" time="5.166">
+        <failure message="Cannot invoke &quot;pojos.RegisterPojo.getFirst_name()&quot; because the return value of &quot;pojos.RegisterResponsePojo.getUser()&quot; is null" type="java.lang.NullPointerException"><![CDATA[* User can see related data what he added...................................failed
+
+StackTrace:
+java.lang.NullPointerException: Cannot invoke "pojos.RegisterPojo.getFirst_name()" because the return value of "pojos.RegisterResponsePojo.getUser()" is null
+	at stepdefinitions.api.MyStepdefs.user_can_see_related_data_what_he_added(MyStepdefs.java:162)
+	at ✽.User can see related data what he added(file:///C:/Users/Lenovo%20X270/IdeaProjects/API_Test2/src/test/resources/features/api/MyLogin.feature:23)
+]]></failure>
+    </testcase>
+</testsuite>
